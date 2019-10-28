@@ -18,16 +18,23 @@ function isPalindrome(word)
         word = word.toLowerCase();
         var i = 0;
         var j = word.length - 1;
-        var isSameChar = true;
+        // var isSameChar = true;
         var iterations = Math.floor(word.length / 2);
-        while (i < iterations && isSameChar)
+        // while (i < iterations && isSameChar)
+        // {
+        //     /* if the characters are different the word is not palindrome (isSameChar
+        //     will be false) */
+        //     isSameChar = word.charAt(i) === word.charAt(j);
+        //     ++i;
+        //     --j;
+        // }
+        // return isSameChar;
+        while (i < iterations)
         {
-            /* if the characters are different the word is not palindrome (isSameChar
-            will be false) */
-            isSameChar = word.charAt(i) === word.charAt(j);
+            if (word.charAt(i) !== word.charAt(j)) return false;
             ++i;
             --j;
         }
-        return isSameChar;
+        return true;
     }
 }
